@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/petshop-eureka/petshop-eureka.iml" filepath="$PROJECT_DIR$/petshop-eureka/petshop-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/petshop-parent2/petshop-index/petshop-index.iml" filepath="$PROJECT_DIR$/petshop-parent2/petshop-index/petshop-index.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/petshop-parent1.iml" filepath="$PROJECT_DIR$/.idea/petshop-parent1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/petshop-parent2/petshop-parent2.iml" filepath="$PROJECT_DIR$/petshop-parent2/petshop-parent2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/petshop-parent2/petshop-product/petshop-product.iml" filepath="$PROJECT_DIR$/petshop-parent2/petshop-product/petshop-product.iml" />
+      <module fileurl="file://$PROJECT_DIR$/petshop-parent2/petshop-user/petshop-user.iml" filepath="$PROJECT_DIR$/petshop-parent2/petshop-user/petshop-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/petshop-zuul/petshop-zuul.iml" filepath="$PROJECT_DIR$/petshop-zuul/petshop-zuul.iml" />
+    </modules>
+  </component>
+</project>

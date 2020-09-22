@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="petshop-zuul" />
+        <module name="petshop-eureka" />
+        <module name="petshop-product" />
+        <module name="petshop-user" />
+        <module name="petshop-index" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="petshop-eureka" target="1.8" />
+      <module name="petshop-index" target="1.8" />
+      <module name="petshop-parent1" target="1.8" />
+      <module name="petshop-parent2" target="1.8" />
+      <module name="petshop-product" target="1.8" />
+      <module name="petshop-user" target="1.8" />
+      <module name="petshop-zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="petshop-eureka" options="-parameters" />
+      <module name="petshop-index" options="-parameters" />
+      <module name="petshop-product" options="-parameters" />
+      <module name="petshop-user" options="-parameters" />
+      <module name="petshop-zuul" options="-parameters" />
+    </option>
+  </component>
+</project>
