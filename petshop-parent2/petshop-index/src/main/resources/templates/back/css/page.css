@@ -1,0 +1,49 @@
+#page {
+	/* 防止点击过快选中文本 */
+	-ms-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	margin: 20px auto;
+	color: #666;
+	display: block;
+	text-align: center;
+}
+
+#page li {
+	display: inline-block;
+	min-width: 30px;
+	height: 28px;
+	cursor: pointer;
+	color: #666;
+	font-size: 13px;
+	line-height: 28px;
+	background-color: #f9f9f9;
+	border: 1px solid #dce0e0;
+	text-align: center;
+	margin: 0 4px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+/* 上一页和下一页的样式 */
+.xl-nextPage,
+.xl-prevPage {
+	width: 30px;
+	color: #0073A9;
+	height: 28px;
+}
+
+/* 失效状态样式 */
+#page li.xl-disabled {
+	opacity: .5;
+	cursor: no-drop;
+	color: #009688;
+}
+
+/* 当前页码显示状态 */
+#page li.xl-active {
+	background-color: #009393;
+	border-color: gray;
+	color: #FFF
+}
