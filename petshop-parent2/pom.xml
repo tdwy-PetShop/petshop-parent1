@@ -17,6 +17,7 @@
     <module>petshop-product</module>
     <module>petshop-index</module>
     <module>petshop-user</module>
+    <module>petshop-blog</module>
 
   </modules>
 

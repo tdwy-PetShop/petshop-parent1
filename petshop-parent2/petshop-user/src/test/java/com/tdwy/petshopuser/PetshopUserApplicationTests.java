@@ -1,4 +1,4 @@
-package com.tbwy.petshopuser;
+package com.tdwy.petshopuser;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

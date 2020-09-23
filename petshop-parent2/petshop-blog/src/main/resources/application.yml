@@ -1,0 +1,17 @@
+server:
+  port: 8004
+
+
+spring:
+  application:
+    name: blog
+  datasource:
+    url: jdbc:mysql://127.0.0.1/petshop?serverTimezone=UTC&CharacterEncoding=UTF-8&useSSL=false
+    username: root
+    password: a
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    com.tdwy.petshopblog: debug
+

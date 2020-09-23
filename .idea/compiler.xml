@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="petshop-zuul" />
+        <module name="petshop-common" />
+        <module name="petshop-index" />
         <module name="petshop-eureka" />
         <module name="petshop-product" />
+        <module name="petshop-blog" />
         <module name="petshop-user" />
-        <module name="petshop-index" />
+        <module name="petshop-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="petshop-blog" target="1.8" />
+      <module name="petshop-common" target="1.5" />
       <module name="petshop-eureka" target="1.8" />
       <module name="petshop-index" target="1.8" />
       <module name="petshop-parent1" target="1.8" />
@@ -25,6 +29,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="petshop-blog" options="-parameters" />
       <module name="petshop-eureka" options="-parameters" />
       <module name="petshop-index" options="-parameters" />
       <module name="petshop-product" options="-parameters" />
