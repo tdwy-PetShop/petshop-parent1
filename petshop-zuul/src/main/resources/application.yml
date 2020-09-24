@@ -11,12 +11,12 @@ zuul:
       path: /simple/163
       url: http://www.163.com
 
-#      product: /product/**
-#
-#      user: /user/**
-#    base:
-#      path: /**
-#      serviceId: index
+      product: /product/**
+
+      user: /user/**
+    base:
+      path: /**
+      serviceId: index
 
 
 

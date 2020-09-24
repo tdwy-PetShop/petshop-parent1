@@ -1,5 +1,6 @@
 package com.tdwy.petshopproduct;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // 服务降级注解
 @EnableCircuitBreaker
 @SpringBootApplication
+@MapperScan("com.tdwy.petshop.dao")
 public class PetshopProductApplication implements WebMvcConfigurer {
 
     public static void main(String[] args) {
