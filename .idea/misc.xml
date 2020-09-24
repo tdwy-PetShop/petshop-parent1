@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/../petshop-common/pom.xml" />
         <option value="$PROJECT_DIR$/../petshop-blog/pom.xml" />
         <option value="$PROJECT_DIR$/petshop-parent2/petshop-blog/pom.xml" />
+        <option value="$PROJECT_DIR$/petshop-back/pom.xml" />
+        <option value="$PROJECT_DIR$/petshop-parent2/petshop-back/pom.xml" />
       </list>
     </option>
   </component>

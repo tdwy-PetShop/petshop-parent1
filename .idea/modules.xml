@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/petshop-parent2/petshop-back/petshop-back.iml" filepath="$PROJECT_DIR$/petshop-parent2/petshop-back/petshop-back.iml" />
       <module fileurl="file://$PROJECT_DIR$/petshop-parent2/petshop-blog/petshop-blog.iml" filepath="$PROJECT_DIR$/petshop-parent2/petshop-blog/petshop-blog.iml" />
       <module fileurl="file://$PROJECT_DIR$/../petshop-common/petshop-common.iml" filepath="$PROJECT_DIR$/../petshop-common/petshop-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/petshop-eureka/petshop-eureka.iml" filepath="$PROJECT_DIR$/petshop-eureka/petshop-eureka.iml" />

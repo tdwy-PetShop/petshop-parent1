@@ -1,0 +1,7 @@
+server:
+  port: 8005
+
+# 定义当前服务名
+spring:
+  application:
+    name: back
