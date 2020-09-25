@@ -8,8 +8,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class BlogAction {
 
     @GetMapping("blog.html")
-    public ModelAndView wishlist(ModelAndView mav){
-        mav.setViewName("wishlist");
+    public ModelAndView blog(ModelAndView mav){
+        mav.setViewName("blog");
         return mav;
     }
 }
