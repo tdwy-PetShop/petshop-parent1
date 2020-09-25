@@ -423,7 +423,7 @@
                         th:each="product : ${recentProducts}">
                         <div class="product-wrapper mb-10">
                             <div class="product-img">
-                                <a th:href="'product-details.html#'+${product.getId()}">
+                                <a th:href="'product-details.html?id='+${product.getId()}">
                                     <img th:src="${product.getImage()}" alt="">
                                 </a>
                                 <div class="product-action">
@@ -442,9 +442,14 @@
                             </div>
                             <div class="product-content">
                                 <h4><a href="product-details.html" th:text="${product.getName()}">Dog Calcium Food</a></h4>
-                                <div class="product-price">
-                                    <span class="new" th:text="${product.getPrice()}">$20.00 </span>
-                                    <span class="old" th:text="${product.getDisprice()}">$50.00</span>
+                                <div class="product-price" th:switch="${product.getDisprice()}!=null">
+                                    <div th:case="true">
+                                        <span class="new" th:text="${product.getDisprice()}">$20.00 </span>
+                                        <span class="old" th:text="${product.getPrice()}">$50.00</span>
+                                    </div>
+                                    <div th:case="false">
+                                        <span class="new" th:text="${product.getPrice()}">$20.00 </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>

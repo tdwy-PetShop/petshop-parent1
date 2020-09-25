@@ -23,4 +23,13 @@ public class ProductBiz {
         PageHelper.startPage(1,8);
         return productMapper.selectByExample(productExample);
     }
+
+    /**
+     * 商品详情
+     * @param id
+     * @return
+     */
+    public Product productDetails(int id){
+        return productMapper.selectByPrimaryKey(id);
+    }
 }
