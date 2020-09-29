@@ -28,7 +28,14 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="welcome-area">
-                                <p>Default welcome msg! </p>
+                                <p>
+                                <span th:switch="${session.loginedUser}==null">
+                                	<a th:case="true" data-toggle="modal" data-target="#loginModal" class="login"
+                                	rel="nofollow">Hi,please login in!</a>
+                                	<span th:case="false" data-toggle="modal" class="login"
+                                	th:text="'Hi,'+${session.loginedUser.name}"></span>
+                                </span>
+                                </p>
                             </div>
                         </div>
                         <div class="col-lg-8 col-md-8 col-12">
