@@ -29,11 +29,9 @@
                         <div class="col-lg-4 col-md-4 col-12">
                             <div class="welcome-area">
                                 <p>
-                                <span th:switch="${session.loginedUser}==null">
-                                	<a th:case="true" data-toggle="modal" data-target="#loginModal" class="login"
-                                	rel="nofollow">Hi,please login in!</a>
-                                	<span th:case="false" data-toggle="modal" class="login"
-                                	th:text="'Hi,'+${session.loginedUser.name}"></span>
+                                <span th:switch="${session.get('loginedUser')}==null">
+                                	<a th:case="true" th:href="login-register.html">请登录</a>
+                                	<a th:case="false" th:text="'欢迎'+${session.get('loginedUser').getName()}"></a>
                                 </span>
                                 </p>
                             </div>

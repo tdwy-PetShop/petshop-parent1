@@ -50,7 +50,7 @@
                                 <div id="lg1" class="tab-pane active">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="/login" method="post">
+                                            <form action="/login.do" method="post">
                                             	<input type="hidden" name="t" value="lg">
                                                 <label for="edit-name">用户名 <span class="form-required" title="此项必填。">*</span>
 												<span style="color: red" th:each="e : ${errors}" th:if="${'lg'.equals(param.t.toString()) and e.field=='name'}" th:text="${e.defaultMessage}"></span>									
@@ -75,7 +75,7 @@
                                 <div id="lg2" class="tab-pane">
                                     <div class="login-form-container">
                                         <div class="login-register-form">
-                                            <form action="/register" method="post" >
+                                            <form action="/register.do" method="post" >
                                             	<input type="hidden" name="t" value="reg">
                                             	<label for="edit-name">用户名 <span class="form-required" title="此项必填。">*</span>
   												<span style="color: red" class="emsg" th:each="e : ${errors}" th:if="${'reg'.equals(param.t.toString()) and e.field=='name'}" th:text="${e.defaultMessage}"></span>

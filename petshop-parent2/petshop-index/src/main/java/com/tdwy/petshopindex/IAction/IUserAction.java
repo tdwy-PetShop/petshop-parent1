@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.tdwy.petshop.bean.Result;
 import com.tdwy.petshop.bean.User;
 
-@FeignClient("user")
+@FeignClient(name = "user")
 public interface IUserAction {
 
 	/**
 	 * Feigin 要求对象参数标注 @RequestBody 注解 
 	 */
-	@PostMapping("user/login")
-	Result login(@RequestBody User user);
+	@PostMapping("login")
+	Result<User> login(@RequestBody User user);
 	
-	@PostMapping("user/register")
-	Result register(@RequestBody User user);
+	@PostMapping("register")
+	Result<User> register(@RequestBody User user);
 }

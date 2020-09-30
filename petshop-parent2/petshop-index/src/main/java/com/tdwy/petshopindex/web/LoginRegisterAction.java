@@ -35,14 +35,14 @@ public class LoginRegisterAction {
 	 *  @RestController 控制器存会话, 必须获取HttpSession对象
 	 *  @Controller 控制器存会话, 使用 @SessionAttributes 
 	 */
-	@PostMapping("login")
+	@PostMapping("login.do")
 	public ModelAndView login( @Valid User user, Errors errors, ModelAndView m,HttpSession session) {
 
 		// 验证用户输入的数据是否正确
 		if (errors.hasFieldErrors("name") || errors.hasFieldErrors("pwd")) {
 			m.addObject("user", user);
 			m.addObject("errors", errors.getFieldErrors());
-			m.setViewName("login-register");
+			m.setViewName("redirect:/login-register.html");
 			return m;
 		}
 
@@ -52,22 +52,24 @@ public class LoginRegisterAction {
 		// 根据返回的结果，如果正确跳转首页
 		if(res.getCode() == 1) {
 			//问题：从Result里面获取用户
-			m.addObject("loginedUser", res.getData());
-			session.setAttribute("loginedUser", user);
-			m.setViewName("index");
+			User loginedUser=res.getData();
+			m.addObject("loginedUser", loginedUser);
+			session.setAttribute("loginedUser", loginedUser);
+			System.out.println("登录成功");
+			m.setViewName("redirect:index.html");
 			return m;
 		} else {
 			// 自定义一个错误
 			errors.rejectValue("name", "NameOrPwdError","用户名或密码错误");
 			m.addObject("errors", errors.getFieldErrors());
 			// 如果错误，跳转回登录页
-			m.setViewName("login-register");
+			m.setViewName("redirect:/login-register.html");
 			return m;
 		}
 
 	}
 	
-	@PostMapping("register")
+	@PostMapping("register.do")
 	public ModelAndView register(@Valid User user, Errors errors, String repwd, ModelAndView m) {
 
 		if(repwd == null || repwd.trim().isEmpty()) {
@@ -79,7 +81,7 @@ public class LoginRegisterAction {
 			// 将用户填写的数据传回页面
 			m.addObject("user", user);
 			m.addObject("errors", errors.getFieldErrors());
-			m.setViewName("login-register");
+			m.setViewName("redirect:/login-register.html");
 			return m;
 		}
 
@@ -93,12 +95,12 @@ public class LoginRegisterAction {
 			 * 		 使用泛型那么 Feign 就是正确转换类型
 			 */
 			m.addObject("loginedUser", res.getData());
-			m.setViewName("index");
+			m.setViewName("redirect:/index.html");
 			return m;
 		} else {
 			m.addObject("errors", errors.getFieldErrors());
 			// 如果错误，跳转回注册页
-			m.setViewName("login-register");
+			m.setViewName("redirect:/login-register.html");
 			return m;
 		}
 	}

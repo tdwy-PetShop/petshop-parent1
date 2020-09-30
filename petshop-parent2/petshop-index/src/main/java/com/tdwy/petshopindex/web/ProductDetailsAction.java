@@ -18,7 +18,6 @@ public class ProductDetailsAction {
 
     @GetMapping("product-details.html")
     public ModelAndView productdetails(int id, ModelAndView mav) {
-        System.out.println(id);
         mav.addObject("productDetails", iProductAction.productDetails(id));
         mav.setViewName("product-details");
         return mav;

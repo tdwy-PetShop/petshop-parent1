@@ -19,7 +19,6 @@ import com.tdwy.petshop.bean.UserExample;
 import com.tdwy.petshop.dao.UserMapper;
 
 @RestController
-@RequestMapping("user")
 public class UserAction {
 	
 	@Resource
