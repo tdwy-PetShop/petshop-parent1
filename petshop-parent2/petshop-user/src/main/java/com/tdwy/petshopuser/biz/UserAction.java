@@ -42,9 +42,17 @@ public class UserAction {
 	public Result<User> register(@RequestBody User user) {
 		// 带 Selective 的insert 是动态生成 字段, 非 null 字段才会参与 insert
 		// insert into 表名 values ( 所有的字段值 )
-		userMapper.insertSelective(user);
-		return new Result<User>(1, "注册成功!", user);
+		UserExample userExample=new UserExample();
+		userExample.createCriteria().andNameEqualTo(user.getName());
+		List<User> users =userMapper.selectByExample(userExample);
+		if (users.isEmpty()) {
+			userMapper.insertSelective(user);
+			return new Result<User>(1, "注册成功!", user);
+		}else {
+			return new Result<User>(0, "注册失败!");
+		}
 	}
+	
 	
 	@PostMapping("delete")
 	public Result<User> delete(@RequestBody User user) {

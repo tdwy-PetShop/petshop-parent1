@@ -1,10 +1,11 @@
 package com.tdwy.petshopindex.web;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
-import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.tdwy.petshop.bean.Result;
 import com.tdwy.petshop.bean.User;
+import com.tdwy.petshop.bean.UserExample;
+import com.tdwy.petshop.dao.UserMapper;
 import com.tdwy.petshopindex.IAction.IUserAction;
 
 
@@ -24,6 +27,7 @@ public class LoginRegisterAction {
 
 	@Resource
 	private IUserAction uaction;
+	
 	
     @GetMapping("login-register.html")
     public ModelAndView loginregister(ModelAndView mav){
@@ -96,6 +100,7 @@ public class LoginRegisterAction {
 			m.setViewName("index");
 			return m;
 		} else {
+			errors.rejectValue("name", "NameOrPwdError","该用户名已被注册!");
 			m.addObject("errors", errors.getFieldErrors());
 			// 如果错误，跳转回注册页
 			m.setViewName("login-register");
