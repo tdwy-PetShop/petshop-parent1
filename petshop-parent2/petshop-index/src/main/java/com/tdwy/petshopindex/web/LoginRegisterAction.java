@@ -59,7 +59,6 @@ public class LoginRegisterAction {
 			User loginedUser=res.getData();
 			m.addObject("loginedUser", loginedUser);
 			session.setAttribute("loginedUser", loginedUser);
-			System.out.println("登录成功");
 			m.setViewName("redirect:index.html");
 			return m;
 		} else {

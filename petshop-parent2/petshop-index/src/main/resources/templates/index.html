@@ -30,8 +30,8 @@
                             <div class="welcome-area">
                                 <p>
                                 <span th:switch="${session.get('loginedUser')}==null">
-                                	<a th:case="true" th:href="login-register.html">请登录</a>
-                                	<a th:case="false" th:text="'欢迎'+${session.get('loginedUser').getName()}"></a>
+                                	<a th:case="true"  th:href="login-register.html"th:text="请登录"></a>
+                                	<a th:href="my-account.html" th:case="false" th:text="'欢迎'+${session.get('loginedUser').getName()}"></a>
                                 </span>
                                 </p>
                             </div>
@@ -39,20 +39,13 @@
                         <div class="col-lg-8 col-md-8 col-12">
                             <div class="account-curr-lang-wrap f-right">
                                 <ul>
-                                    <li class="top-hover"><a href="#">$Doller (US) <i class="icon-arrow-down"></i></a>
+                                    <li><img alt="flag" src="assets/img/logo/logo.png"></li>
+                                    <li><a href="#"> 团队人员  <i class="icon-arrow-down"></i></a>
                                         <ul>
-                                            <li><a href="#">Taka (BDT)</a></li>
-                                            <li><a href="#">Riyal (SAR)</a></li>
-                                            <li><a href="#">Rupee (INR)</a></li>
-                                            <li><a href="#">Dirham (AED)</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#"><img alt="flag" src="assets/img/icon-img/en.jpg"> English  <i class="icon-arrow-down"></i></a>
-                                        <ul>
-                                            <li><a href="#"><img alt="flag" src="assets/img/icon-img/bl.jpg">Bangla </a></li>
-                                            <li><a href="#"><img alt="flag" src="assets/img/icon-img/ar.jpg">Arabic</a></li>
-                                            <li><a href="#"><img alt="flag" src="assets/img/icon-img/in.jpg">Hindi </a></li>
-                                            <li><a href="#"><img alt="flag" src="assets/img/icon-img/sp.jpg">Spanish</a></li>
+                                            <li><a href="#">谭奔 </a></li>
+                                            <li><a href="#">邓起辉</a></li>
+                                            <li><a href="#">严玥 </a></li>
+                                            <li><a href="#">王嘉怡</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -73,46 +66,31 @@
                             <div class="main-menu text-center">
                                 <nav>
                                     <ul>
-                                        <li><a href="index.html">HOME</a>
-                                            <ul class="submenu">
-                                                <li>
-                                                    <a href="index.html">home version 1</a>
-                                                </li>
-                                                <li>
-                                                    <a href="index-2.html">home version 2</a>
-                                                </li>
-                                            </ul>
+                                        <li><a href="index.html">主页</a>
                                         </li>
-                                        <li class="mega-menu-position"><a href="shop-page.html">Food</a>
+                                        <li class="mega-menu-position"><a href="shop-page.html">食物种类</a>
                                             <ul class="mega-menu">
                                                 <li>
                                                     <ul>
-                                                        <li class="mega-menu-title">Dogs Food</li>
-                                                        <li><a href="shop-page.html">Eggs</a></li>
-                                                        <li><a href="shop-page.html">Carrots</a></li>
-                                                        <li><a href="shop-page.html">Salmon fishs</a></li>
-                                                        <li><a href="shop-page.html">Peanut Butter</a></li>
-                                                        <li><a href="shop-page.html">Grapes & Raisins</a></li>
+                                                        <li class="mega-menu-title">宠物狗食物</li>
+                                                        <li><a href="shop-page.html">商品狗粮</a></li>
+                                                        <li><a href="shop-page.html">幼犬粮</a></li>
+                                                        <li><a href="shop-page.html">成犬粮</a></li>
+                                                        <li><a href="shop-page.html">肉制品</a></li>
+                                                        <li><a href="shop-page.html">蔬菜</a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
                                                     <ul>
-                                                        <li class="mega-menu-title">Cats Food</li>
-                                                        <li><a href="shop-page.html">Meat</a></li>
-                                                        <li><a href="shop-page.html">Fish</a></li>
-                                                        <li><a href="shop-page.html">Eggs</a></li>
-                                                        <li><a href="shop-page.html">Veggies</a></li>
-                                                        <li><a href="shop-page.html">Cheese</a></li>
+                                                        <li class="mega-menu-title">宠物猫食物</li>
+                                                        <li><a href="shop-page.html">商品猫粮</a></li>
+                                                        <li><a href="shop-page.html">鱼肉</a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
                                                     <ul>
-                                                        <li class="mega-menu-title">Fishs Food</li>
-                                                        <li><a href="shop-page.html">Rice</a></li>
-                                                        <li><a href="shop-page.html">Veggies</a></li>
-                                                        <li><a href="shop-page.html">Cheese</a></li>
-                                                        <li><a href="shop-page.html">wheat bran</a></li>
-                                                        <li><a href="shop-page.html">Cultivation</a></li>
+                                                        <li class="mega-menu-title">宠物鱼食物</li>
+                                                        <li><a href="shop-page.html">商品鱼粮</a></li>
                                                     </ul>
                                                 </li>
                                                 <li>
@@ -122,55 +100,55 @@
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">PAGES</a>
+                                        <li><a href="#">页面导航</a>
                                             <ul class="submenu">
                                                 <li>
-                                                    <a href="about-us.html">about us</a>
+                                                    <a href="about-us.html">关于我们</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-page.html">shop page</a>
+                                                    <a href="shop-page.html">商品列表</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-list.html">shop list</a>
+                                                    <a href="shop-list.html">商品分类</a>
                                                 </li>
                                                 <li>
-                                                    <a href="product-details.html">product details</a>
+                                                    <a href="product-details.html?pid=1">商品详情</a>
                                                 </li>
                                                 <li>
-                                                    <a href="cart.html">cart page</a>
+                                                    <a href="cart.html">购物车</a>
                                                 </li>
                                                 <li>
-                                                    <a href="checkout.html">checkout</a>
+                                                    <a href="checkout.html">布局模块</a>
                                                 </li>
                                                 <li>
-                                                    <a href="wishlist.html">wishlist</a>
+                                                    <a href="wishlist.html">愿望清单</a>
                                                 </li>
                                                 <li>
-                                                    <a href="contact.html">contact us</a>
+                                                    <a href="contact.html">联系我们</a>
                                                 </li>
                                                 <li>
-                                                    <a href="my-account.html">my account</a>
+                                                    <a href="my-account.html">我的账号</a>
                                                 </li>
                                                 <li>
-                                                    <a href="login-register.html">login / register</a>
+                                                    <a href="login-register.html">登录注册</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="blog-leftsidebar.html">Blog</a>
+                                        <li><a href="blog-leftsidebar.html">博客</a>
                                             <ul class="submenu">
                                                 <li>
-                                                    <a href="blog.html">blog page</a>
+                                                    <a href="blog.html">博客主页</a>
                                                 </li>
                                                 <li>
-                                                    <a href="blog-leftsidebar.html">blog left sidebar</a>
+                                                    <a href="blog-leftsidebar.html">博客列表</a>
                                                 </li>
                                                 <li>
-                                                    <a href="blog-details.html">blog details</a>
+                                                    <a href="blog-details.html">博客详情</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="about-us.html">ABOUT</a></li>
-                                        <li><a href="contact.html">contact us</a></li>
+                                        <li><a href="about-us.html">关于我们</a></li>
+                                        <li><a href="contact.html">联系我们</a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -195,48 +173,11 @@
                                     <a href="login-register.html"><i class="icon-user icons"></i></a>
                                 </div>
                                 <div class="header-cart same-style">
-                                    <button class="icon-cart">
+                                    <button  class="icon-cart"><a th:href="cart.html">
                                         <i class="icon-handbag"></i>
-                                        <span class="count-style">02</span>
+                                        <span class="count-style">02</span></a>
                                     </button>
-                                    <div class="shopping-cart-content">
-                                        <ul>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-1.jpg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Dog Calcium Food </a></h4>
-                                                    <h6>Qty: 02</h6>
-                                                    <span>$260.00</span>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="ti-close"></i></a>
-                                                </div>
-                                            </li>
-                                            <li class="single-shopping-cart">
-                                                <div class="shopping-cart-img">
-                                                    <a href="#"><img alt="" src="assets/img/cart/cart-2.jpg"></a>
-                                                </div>
-                                                <div class="shopping-cart-title">
-                                                    <h4><a href="#">Dog Calcium Food</a></h4>
-                                                    <h6>Qty: 02</h6>
-                                                    <span>$260.00</span>
-                                                </div>
-                                                <div class="shopping-cart-delete">
-                                                    <a href="#"><i class="ti-close"></i></a>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="shopping-cart-total">
-                                            <h4>Shipping : <span>$20.00</span></h4>
-                                            <h4>Total : <span class="shop-total">$260.00</span></h4>
-                                        </div>
-                                        <div class="shopping-cart-btn">
-                                            <a href="cart.html">view cart</a>
-                                            <a href="checkout.html">checkout</a>
-                                        </div>
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -244,91 +185,75 @@
                             <div class="mobile-menu">
                                 <nav id="mobile-menu-active">
                                     <ul class="menu-overflow">
-                                        <li><a href="#">HOME</a>
-                                            <ul>
-                                                <li><a href="index.html">home version 1</a></li>
-                                                <li><a href="index-2.html">home version 2</a></li>
-                                            </ul>
+                                        <li><a href="#">主页</a>
                                         </li>
-                                        <li><a href="#">pages</a>
+                                        <li><a href="#">页面</a>
                                             <ul>
                                                 <li>
-                                                    <a href="about-us.html">about us</a>
+                                                    <a href="about-us.html">关于我们</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-page.html">shop page</a>
+                                                    <a href="shop-page.html">商品列表</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-list.html">shop list</a>
+                                                    <a href="shop-list.html">商品分类</a>
                                                 </li>
                                                 <li>
-                                                    <a href="product-details.html">product details</a>
+                                                    <a href="product-details.html?pid=1">商品详情</a>
                                                 </li>
                                                 <li>
-                                                    <a href="cart.html">cart page</a>
+                                                    <a href="cart.html">购物车</a>
                                                 </li>
                                                 <li>
-                                                    <a href="checkout.html">checkout</a>
+                                                    <a href="checkout.html">布局模块</a>
                                                 </li>
                                                 <li>
-                                                    <a href="wishlist.html">wishlist</a>
+                                                    <a href="wishlist.html">愿望清单</a>
                                                 </li>
                                                 <li>
-                                                    <a href="contact.html">contact us</a>
+                                                    <a href="contact.html">联系我们</a>
                                                 </li>
                                                 <li>
-                                                    <a href="my-account.html">my account</a>
+                                                    <a href="my-account.html">我的账号</a>
                                                 </li>
                                                 <li>
-                                                    <a href="login-register.html">login / register</a>
+                                                    <a href="login-register.html">登录注册</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">Food</a>
+                                        <li><a href="#">食物种类</a>
                                             <ul>
-                                                <li><a href="#">Dogs Food</a>
+                                                <li><a href="#">宠物狗食物</a>
                                                     <ul>
-                                                        <li><a href="shop-page.html">Grapes and Raisins</a></li>
-                                                        <li><a href="shop-page.html">Carrots</a></li>
-                                                        <li><a href="shop-page.html">Peanut Butter</a></li>
-                                                        <li><a href="shop-page.html">Salmon fishs</a></li>
-                                                        <li><a href="shop-page.html">Eggs</a></li>
+                                                        <li><a href="shop-page.html">商品狗粮</a></li>
+                                                        <li><a href="shop-page.html">幼犬粮</a></li>
+                                                        <li><a href="shop-page.html">成犬粮</a></li>
+                                                        <li><a href="shop-page.html">肉制品</a></li>
+                                                        <li><a href="shop-page.html">蔬菜</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="#">Cats Food</a>
+                                                <li><a href="#">宠物猫食物</a>
                                                     <ul>
-                                                        <li><a href="shop-page.html">Meat</a></li>
-                                                        <li><a href="shop-page.html">Fish</a></li>
-                                                        <li><a href="shop-page.html">Eggs</a></li>
-                                                        <li><a href="shop-page.html">Veggies</a></li>
-                                                        <li><a href="shop-page.html">Cheese</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Fishs Food</a>
-                                                    <ul>
-                                                        <li><a href="shop-page.html">Rice</a></li>
-                                                        <li><a href="shop-page.html">Veggies</a></li>
-                                                        <li><a href="shop-page.html">Cheese</a></li>
-                                                        <li><a href="shop-page.html">wheat bran</a></li>
-                                                        <li><a href="shop-page.html">Cultivation</a></li>
+                                                        <li><a href="shop-page.html">商品猫粮</a></li>
+                                                        <li><a href="shop-page.html">鱼肉</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="#">blog</a>
+                                        <li><a href="#">博客</a>
                                             <ul>
                                                 <li>
-                                                    <a href="blog.html">blog page</a>
+                                                    <a href="blog.html">博客主页</a>
                                                 </li>
                                                 <li>
-                                                    <a href="blog-leftsidebar.html">blog left sidebar</a>
+                                                    <a href="blog-leftsidebar.html">博客列表</a>
                                                 </li>
                                                 <li>
-                                                    <a href="blog-details.html">blog details</a>
+                                                    <a href="blog-details.html">博客详情</a>
                                                 </li>
                                             </ul>
                                         </li>
-                                        <li><a href="contact.html"> Contact us </a></li>
+                                        <li><a href="contact.html"> 联系我们 </a></li>
                                     </ul>
                                 </nav>
                             </div>
@@ -344,10 +269,10 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-12 col-sm-7">
                                 <div class="slider-content slider-animated-1 pt-114">
-                                    <h3 class="animated">We keep pets for pleasure.</h3>
-                                    <h1 class="animated">Food & Vitamins <br>For all Pets</h1>
+                                    <h3 class="animated">我们养宠物是为了娱乐.</h3>
+                                    <h1 class="animated">食物&维生素<br>适用于所有宠物</h1>
                                     <div class="slider-btn">
-                                        <a class="animated" href="product-details.html">SHOP NOW</a>
+                                        <a class="animated" href="product-details.html">开始购物吧</a>
                                     </div>
                                 </div>
                             </div>
@@ -364,10 +289,10 @@
                         <div class="row">
                             <div class="col-lg-6 col-md-6 col-sm-7 col-12">
                                 <div class="slider-content slider-animated-1 pt-114">
-                                    <h3 class="animated">We keep pets for pleasure.</h3>
-                                    <h1 class="animated">Food & Vitamins <br>For all Pets</h1>
+                                    <h3 class="animated">我们养宠物是为了娱乐.</h3>
+                                    <h1 class="animated">食物和维生素 <br>适用于所有宠物</h1>
                                     <div class="slider-btn">
-                                        <a class="animated" href="product-details.html">SHOP NOW</a>
+                                        <a class="animated" href="product-details.html">开始购物吧</a>
                                     </div>
                                 </div>
                             </div>
@@ -390,7 +315,7 @@
                                 <img src="assets/img/product/product-1.jpg" alt="">
                             </div>
                             <div class="single-food-content">
-                                <h3>Dogs Food</h3>
+                                <h3>宠物狗粮食</h3>
                             </div>
                         </div>
                     </div>
@@ -400,7 +325,7 @@
                                 <img src="assets/img/product/product-2.jpg" alt="">
                             </div>
                             <div class="single-food-content">
-                                <h3>Cats Food</h3>
+                                <h3>宠物猫粮食</h3>
                             </div>
                         </div>
                     </div>
@@ -410,7 +335,7 @@
                                 <img src="assets/img/product/product-3.jpg" alt="">
                             </div>
                             <div class="single-food-content">
-                                <h3>Fishs Food</h3>
+                                <h3>宠物鱼粮食</h3>
                             </div>
                         </div>
                     </div>
@@ -420,8 +345,8 @@
         <div class="product-area pt-95 pb-70 gray-bg">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h4>Most Populer</h4>
-                    <h2>Recent Products</h2>
+                    <h4>最受欢迎</h4>
+                    <h2>近期产品</h2>
                 </div>
                 <div class="row">
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6"
