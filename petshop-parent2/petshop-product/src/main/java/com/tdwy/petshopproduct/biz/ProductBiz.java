@@ -3,6 +3,7 @@ package com.tdwy.petshopproduct.biz;
 import com.github.pagehelper.PageHelper;
 import com.tdwy.petshop.bean.*;
 import com.tdwy.petshop.dao.CartMapper;
+import com.tdwy.petshop.dao.CategoryMapper;
 import com.tdwy.petshop.dao.ProductMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +20,8 @@ public class ProductBiz {
 
     @Resource
     CartMapper cartMapper;
+    @Resource
+    CategoryMapper categoryMapper;
 
     /**
      * 展示index主页 Recent Products
@@ -79,5 +82,21 @@ public class ProductBiz {
             }
         }
     }
+
+    /**
+     * 查询所有
+     */
+    public Result<List<Product>> selectAll(){
+        ProductExample productExample=new ProductExample();
+        productExample.setOrderByClause("hot desc");
+        try {
+            List<Product> products=productMapper.selectByExample(productExample);
+            return new Result<>(1,"查询成功",products);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result<>(0,"系统错误");
+        }
+    }
+
 
 }

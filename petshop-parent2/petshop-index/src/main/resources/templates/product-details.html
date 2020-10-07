@@ -223,19 +223,11 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <div class="rating-form-style mb-20">
-                                                    <input placeholder="Name" type="text">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="rating-form-style mb-20">
-                                                    <input placeholder="Email" type="text">
-                                                </div>
-                                            </div>
                                             <div class="col-md-12">
+                                                <form action="" method="post" ></form>
                                                 <div class="rating-form-style form-submit">
-                                                    <textarea name="message" placeholder="Message"></textarea>
+                                                    <input type="hidden" name="pid" th:value="${productDetails.getId()}">
+                                                    <input name="content" placeholder="Message"></input>
                                                     <input type="submit" value="add review">
                                                 </div>
                                             </div>

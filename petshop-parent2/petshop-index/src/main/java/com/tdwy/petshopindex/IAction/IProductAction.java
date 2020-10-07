@@ -1,9 +1,6 @@
 package com.tdwy.petshopindex.IAction;
 
-import com.tdwy.petshop.bean.Cart;
-import com.tdwy.petshop.bean.Product;
-import com.tdwy.petshop.bean.Result;
-import com.tdwy.petshop.bean.User;
+import com.tdwy.petshop.bean.*;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -21,4 +18,23 @@ public interface IProductAction {
 
     @PostMapping("showCart")
     Result<List<Cart>> showCart(@RequestBody User user);
+
+    @GetMapping("showCategory")
+    Result<List<Category>> showCategory();
+
+    @PostMapping("showProductCate")
+    Result<List<Product>> showProductCate(@RequestParam int id);
+
+    @PostMapping("addOrders")
+    Result addOrders(@RequestBody User user);
+
+    @PostMapping("addComm")
+    Result addComm(@RequestBody User user,@RequestParam int pid,@RequestParam String content);
+
+    @PostMapping("showOrders")
+    Result<List<Orders>> showOrders(@RequestBody User user);
+
+    @GetMapping("changeState")
+    Result changeState(@RequestParam int state,@RequestParam String orderid);
+
 }

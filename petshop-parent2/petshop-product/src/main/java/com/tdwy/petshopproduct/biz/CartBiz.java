@@ -16,14 +16,21 @@ public class CartBiz {
     CartMapper cartMapper;
 
     public Result<List<Cart>> showCart(User user) {
-        CartExample cartExample=new CartExample();
+        CartExample cartExample = new CartExample();
         cartExample.createCriteria().andUidEqualTo(user.getId());
         try {
-            List<Cart> cartList=cartMapper.selectByExample(cartExample);
+            List<Cart> cartList = cartMapper.selectByExample(cartExample);
             return new Result<>(1, "查询成功", cartList);
-        }catch (Exception e){
-            return new Result<>(0,"系统错误");
+        } catch (Exception e) {
+            return new Result<>(0, "系统错误");
         }
 
+    }
+
+    public Result delAll(User user) {
+        CartExample cartExample = new CartExample();
+        cartExample.createCriteria().andUidEqualTo(user.getId());
+        int code=cartMapper.deleteByExample(cartExample);
+        return new Result(1,"操作成功");
     }
 }

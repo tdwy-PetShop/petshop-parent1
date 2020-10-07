@@ -70,29 +70,15 @@
                                         </li>
                                         <li class="mega-menu-position"><a href="shop-page.html">食物种类</a>
                                             <ul class="mega-menu">
-                                                <li>
+                                                <li th:each="cateList : ${categorylist}">
                                                     <ul>
-                                                        <li class="mega-menu-title">宠物狗食物</li>
-                                                        <li><a href="shop-page.html">商品狗粮</a></li>
-                                                        <li><a href="shop-page.html">幼犬粮</a></li>
-                                                        <li><a href="shop-page.html">成犬粮</a></li>
-                                                        <li><a href="shop-page.html">肉制品</a></li>
-                                                        <li><a href="shop-page.html">蔬菜</a></li>
+                                                        <li class="mega-menu-title" th:text="${cateList.getCname()}">宠物狗食物</li>
+                                                        <li th:each="children : ${cateList.getChildren()}">
+                                                            <a th:href="'shop-page.html?id='+${children.getId()}" th:text="${children.getCname()}">商品狗粮</a>
+                                                        </li>
                                                     </ul>
                                                 </li>
-                                                <li>
-                                                    <ul>
-                                                        <li class="mega-menu-title">宠物猫食物</li>
-                                                        <li><a href="shop-page.html">商品猫粮</a></li>
-                                                        <li><a href="shop-page.html">鱼肉</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li>
-                                                    <ul>
-                                                        <li class="mega-menu-title">宠物鱼食物</li>
-                                                        <li><a href="shop-page.html">商品鱼粮</a></li>
-                                                    </ul>
-                                                </li>
+
                                                 <li>
                                                     <ul>
                                                         <li><a href="shop-page.html"><img alt="" src="assets/img/banner/menu-img-4.jpg"></a></li>
@@ -109,7 +95,7 @@
                                                     <a href="shop-page.html">商品列表</a>
                                                 </li>
                                                 <li>
-                                                    <a href="shop-list.html">商品分类</a>
+                                                    <a href="orders.html">商品分类</a>
                                                 </li>
                                                 <li>
                                                     <a href="product-details.html?pid=1">商品详情</a>
@@ -223,19 +209,11 @@
                                         </li>
                                         <li><a href="#">食物种类</a>
                                             <ul>
-                                                <li><a href="#">宠物狗食物</a>
+                                                <li th:each="cl : ${categorylist}"><a th:href="'shop-page.html?id='+${cl.getId()}" th:text="${cl.getCname()}">宠物狗食物</a>
                                                     <ul>
-                                                        <li><a href="shop-page.html">商品狗粮</a></li>
-                                                        <li><a href="shop-page.html">幼犬粮</a></li>
-                                                        <li><a href="shop-page.html">成犬粮</a></li>
-                                                        <li><a href="shop-page.html">肉制品</a></li>
-                                                        <li><a href="shop-page.html">蔬菜</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">宠物猫食物</a>
-                                                    <ul>
-                                                        <li><a href="shop-page.html">商品猫粮</a></li>
-                                                        <li><a href="shop-page.html">鱼肉</a></li>
+                                                        <li th:each="ch : ${cl.getChildren()}">
+                                                            <a href="#" th:text="${ch.getCname()}">商品狗粮</a>
+                                                        </li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -351,7 +329,11 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6"
                         th:each="product : ${recentProducts}">
-                        <div class="product-wrapper mb-10">
+                        <div   class="product-wrapper mb-10">
+                            <div id="showproduct">
+                                <form id="myform" method="post" action="/addCart.do" >
+                                    <input type="hidden" name="pid" th:value="${product.getId()}">
+                                </form>
                             <div class="product-img">
                                 <a th:href="'product-details.html?id='+${product.getId()}">
                                     <img th:src="${product.getImage()}" alt="">
@@ -360,9 +342,10 @@
                                     <a title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#">
                                         <i class="ti-plus"></i>
                                     </a>
-                                    <a title="Add To Cart" href="#">
+                                    <a title="Add To Cart" href="javascript:void(0);" onclick="document.getElementById('myform').submit();" id="agree" class="determine">
                                         <i class="ti-shopping-cart"></i>
                                     </a>
+
                                 </div>
                                 <div class="product-action-wishlist">
                                     <a title="Wishlist" href="#">
@@ -372,7 +355,7 @@
                             </div>
                             <div class="product-content">
                                 <h4><a href="product-details.html" th:text="${product.getName()}">Dog Calcium Food</a></h4>
-                                <div class="product-price" th:switch="${product.getDisprice()}!=null">
+                                <div id="showpropri" class="product-price" th:switch="${product.getDisprice()}!=null">
                                     <div th:case="true">
                                         <span class="new" th:text="${product.getDisprice()}">$20.00 </span>
                                         <span class="old" th:text="${product.getPrice()}">$50.00</span>
@@ -381,6 +364,7 @@
                                         <span class="new" th:text="${product.getPrice()}">$20.00 </span>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>

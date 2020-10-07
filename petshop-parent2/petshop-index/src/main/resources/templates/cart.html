@@ -150,9 +150,10 @@
                                 <div class="grand-totall">
                                     <span>Subtotal:   $155.00</span>
                                     <h5>Grand Total:   $353.00</h5>
-                                    <a href="#">Proceed To Checkout</a>
+                                    <a href="javascript:void(0);" onclick="document.getElementById('myform').submit();">Proceed To Checkout</a>
                                     <p>Checkout with Multiple Addresses</p>
                                 </div>
+                                <form action="/addOrder.do" method="post" id="myform"></form>
                             </div>
                         </div>
                     </div>

@@ -6,6 +6,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import com.tdwy.petshop.bean.Category;
+import com.tdwy.petshopindex.IAction.IProductAction;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,13 +26,18 @@ import com.tdwy.petshopindex.IAction.IUserAction;
 @RestController
 @SessionAttributes ("loginedUser")
 public class LoginRegisterAction {
-
+	@Resource
+	IProductAction iProductAction;
 	@Resource
 	private IUserAction uaction;
 	
 	
     @GetMapping("login-register.html")
     public ModelAndView loginregister(ModelAndView mav){
+		Result<List<Category>> cres=iProductAction.showCategory();
+		if (cres.getCode()==1){
+			mav.addObject("categorylist",cres.getData());
+		}
         mav.setViewName("login-register");
         return mav;
     }
@@ -59,7 +66,7 @@ public class LoginRegisterAction {
 			User loginedUser=res.getData();
 			m.addObject("loginedUser", loginedUser);
 			session.setAttribute("loginedUser", loginedUser);
-			m.setViewName("redirect:index.html");
+			m.setViewName("redirect:/index.html");
 			return m;
 		} else {
 			// 自定义一个错误

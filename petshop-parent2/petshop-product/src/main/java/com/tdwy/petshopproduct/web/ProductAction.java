@@ -2,8 +2,7 @@ package com.tdwy.petshopproduct.web;
 
 import com.tdwy.petshop.bean.*;
 import com.tdwy.petshop.dao.CartMapper;
-import com.tdwy.petshopproduct.biz.CartBiz;
-import com.tdwy.petshopproduct.biz.ProductBiz;
+import com.tdwy.petshopproduct.biz.*;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -16,6 +15,12 @@ public class ProductAction {
     ProductBiz productBiz;
     @Resource
     CartBiz cartBiz;
+    @Resource
+    CategoryBiz categoryBiz;
+    @Resource
+    OrdersBiz ordersBiz;
+    @Resource
+    ProCommBiz proCommBiz;
 
 
     @GetMapping("recentProducts")
@@ -41,5 +46,44 @@ public class ProductAction {
     @PostMapping("showCart")
     public Result<List<Cart>> showCart(@RequestBody User user){
         return cartBiz.showCart(user);
+    }
+
+    @GetMapping("showCategory")
+    public Result<List<Category>> showCategory(){
+        return categoryBiz.showCategory();
+    }
+
+    @PostMapping("showProductCate")
+    public Result<List<Product>> showProductCate(@RequestParam int id){
+        return categoryBiz.showProductCate(id);
+    }
+    /**
+     * 提交订单
+     */
+    @PostMapping("addOrders")
+    public Result addOrders(@RequestBody User user){
+        return ordersBiz.addOrder(user);
+    }
+
+    /**
+     * 商品评论
+     */
+    @PostMapping("addComm")
+    public Result addComm(@RequestBody User user,@RequestParam int pid,@RequestParam String content){
+        return proCommBiz.addComm(user,pid,content);
+    }
+
+    /**
+     * 展示订单
+     *
+     */
+    @PostMapping("showOrders")
+    public Result<List<Orders>> showOrders(@RequestBody User user){
+        return ordersBiz.showOrders(user);
+    }
+
+    @GetMapping("changeState")
+    public Result changeState(@RequestParam int state,@RequestParam String orderid){
+        return ordersBiz.changeState(state,orderid);
     }
 }
