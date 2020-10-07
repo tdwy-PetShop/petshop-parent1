@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面-X-admin2.2</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+        <script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/xadmin.js"></script>
+        <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+		<!--<script type="text/javascript" src="js/Demo.js"></script>-->
+    </head>
+    <body>
+        <div class="x-nav">
+          <span class="layui-breadcrumb">
+            <a href="">首页</a>
+            <a href="">演示</a>
+            <a>
+              <cite>导航元素</cite></a>
+          </span>
+          <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
+            <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
+        </div>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                       
+                      
+                        <div class="layui-card-body ">
+							
+                              
+                              
+                               <div class="layui-card-header">
+                               
+                                   <button class="layui-btn" onclick="xadmin.open('添加分类','type-add.html')" ><i class="layui-icon"></i>添加分类</button>
+                               </div>
+                             
+                            <table id="table1" class="layui-table layui-form">
+                              <thead>
+								 <tr>
+                                    <th>编号</th>
+                                    <th>类型名称</th>
+                                    
+                                    
+                                    <th>状态</th>
+                                    <th>操作</th>
+								</tr>
+                              </thead>
+                              <tbody>
+                                <tr v-for="(tinfo,index) in slist" >
+								 <td>{{index+1}}</td>
+                                  <td>{{tinfo.name}}</td>                                                         
+                                  
+                                   <td><input v-if="tinfo.dis==1" class="layui-btn" value="已启用" style="width: 35%; align-content: center;" />
+								   <input v-else class="layui-btn" value="已停用" style="width: 35%; align-content: center;background-color: red ;"  />
+								   </td>
+                                  <td class="td-manage">
+                                 <!--   <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+                                      <i class="layui-icon">&#xe601;</i>
+                                    </a> -->
+                                    <a title="冻结"  @click="member_stop1(tinfo.id,'5')" href="javascript:;" v-if="tinfo.dis==1">
+                                      <i class="layui-icon">&#xe601;</i>
+                                    </a>
+									    <a title="启用"  @click="member_stop1(tinfo.id,'1')" href="javascript:;" v-if="tinfo.dis!=1">
+									  <i class="layui-icon">&#xe62f;</i>
+									</a>
+									
+                                    <a title="删除" @click="menber_del(tinfo.id)" href="javascript:;">
+                                      <i class="layui-icon">&#xe640;</i>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                        </div>
+                        <div class="layui-card-body ">
+                            <div class="page">
+                                <div id="page">
+                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </body>
+
+	  <script type="text/javascript" src="wz/cookie.js"></script>
+	  <script type="text/javascript" src="wz/jquery-3.2.1.js"></script>
+	  <script type="text/javascript" src="wz/vue.min.js"></script>	 
+	  <script type="text/javascript" src="wz/type.js">
+		  
+	  	
+	  </script>
+	  
+</html>
