@@ -1,13 +1,14 @@
 package com.tdwy.petshopindex.web;
 
 
+import com.tdwy.petshop.bean.Orders;
+import com.tdwy.petshop.bean.Result;
 import com.tdwy.petshopindex.IAction.IProductAction;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping("back")
@@ -33,6 +34,8 @@ public class BackAction {
     }
     @GetMapping("badvert.html")
     public ModelAndView advert(ModelAndView mav){
+        Result<List<Orders>> res=iProductAction.showAllOrders();
+        mav.addObject("orders",res.getData());
         mav.setViewName("badvert");
         return mav;
     }
@@ -66,4 +69,13 @@ public class BackAction {
         mav.setViewName("bwelcome");
         return mav;
     }
+
+    @PostMapping("fahuo.do")
+    public ModelAndView fahuo(@RequestParam String orderid,ModelAndView mav){
+        iProductAction.changeState(2,orderid);
+        mav.setViewName("redirect:bindex.html");
+        return mav;
+    }
+
+
 }

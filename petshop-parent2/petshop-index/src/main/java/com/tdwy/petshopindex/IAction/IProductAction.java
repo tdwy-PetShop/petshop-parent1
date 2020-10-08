@@ -37,4 +37,6 @@ public interface IProductAction {
     @GetMapping("changeState")
     Result changeState(@RequestParam int state,@RequestParam String orderid);
 
+    @PostMapping("showAllOrders")
+    Result<List<Orders>> showAllOrders();
 }

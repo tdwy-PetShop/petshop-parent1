@@ -14,12 +14,12 @@ public class AlipayConfig {
     // 支付宝公钥,查看地址：https://openhome.alipay.com/platform/keyManage.htm 对应APPID下的支付宝公钥。
     public static String alipay_public_key = "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwX6LYSb5i+LcT4LVPZXj7fEGSfboPfpejzs8JQvNZwYfhVKQBRHVg9uu72Tlf6QXi7kP0U5jGErWGOE+fS4Quyq7q1LDP3Hcbqg4cfEQhm01kTECz5XYbG3DBX4JztCND3bCfzXDK7tyOjElUS8SK1prJpl1nnU3dGcIMtyCNrt2wvLzC70rj/xoKJN6KB0sMMSQbHm/CK5R78oIV/GlVfkX/2Y6ATp2hompQDP0IzuNmJXi69ER7Qg4FrNIiu9xBJAKbTvwMguYeeG2f847uSsYR9sCh7CUQwufjM6lhiK2r0cFJ9IViYtiWqbqsN90k2l21jfm0wQX5lV7rAorEwIDAQAB";
     // 服务器异步通知页面路径  需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
-    public static String notify_url = "http://wgj99g.natappfree.cc/notify_url.view";
+    public static String notify_url = "http://ir3zq2.natappfree.cc/notify_url.view";
 
     // 页面跳转同步通知页面路径 需http://格式的完整路径，不能加?id=123这类自定义参数，必须外网可以正常访问
     // 即支付成功之后，需要跳转到的页面，一般为网站的首页
     // 便于测试，直接使用了 baidu
-    public static String return_url = "http://wgj99g.natappfree.cc/return_url.view";
+    public static String return_url = "http://ir3zq2.natappfree.cc/return_url.view";
 
     // 签名方式
     public static String sign_type = "RSA2";

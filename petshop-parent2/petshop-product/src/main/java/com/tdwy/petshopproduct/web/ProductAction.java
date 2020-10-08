@@ -86,4 +86,9 @@ public class ProductAction {
     public Result changeState(@RequestParam int state,@RequestParam String orderid){
         return ordersBiz.changeState(state,orderid);
     }
+
+    @PostMapping("showAllOrders")
+    public Result<List<Orders>> showAllOrders(){
+       return ordersBiz.showAllOrders();
+    }
 }

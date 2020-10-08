@@ -93,4 +93,14 @@ public class OrdersBiz {
         int code=ordersMapper.changeState(orders);
         return new Result(1,"修改成功");
     }
+
+    public Result<List<Orders>> showAllOrders(){
+        try {
+            List<Orders> orders=ordersMapper.selectAll();
+            return new Result<>(1,"查询成功",orders);
+        }catch (Exception e){
+            e.printStackTrace();
+            return new Result<>(0,"系统错误");
+        }
+    }
 }
